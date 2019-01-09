@@ -50,7 +50,7 @@ namespace Traffic_Policer.Ambientevents
              
              catch (Exception e)
              {
-                  Game.Console.Print(e);
+                  Game.Console.Print(e.ToString());
                   End();
              }
         }
