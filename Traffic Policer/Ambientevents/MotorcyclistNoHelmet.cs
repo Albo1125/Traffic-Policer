@@ -18,32 +18,41 @@ namespace Traffic_Policer.Ambientevents
         
         
         private string[] bikesToSelectFrom = new string[] { "BATI", "BATI2", "AKUMA", "BAGGER", "DOUBLE", "NEMESIS", "HEXER" };
-
+        
         public MotorcyclistNoHelmet(bool createBlip, bool displayMessage) : base(displayMessage, "Creating motorcyclist without a helmet event.")
         {
-            spawnPoint = World.GetNextPositionOnStreet(Game.LocalPlayer.Character.Position.Around2D(120f));
-            while (Vector3.Distance(Game.LocalPlayer.Character.Position, spawnPoint) < 80f)
+            try
             {
-                GameFiber.Yield();
                 spawnPoint = World.GetNextPositionOnStreet(Game.LocalPlayer.Character.Position.Around2D(120f));
-            }
-            car = new Vehicle(bikesToSelectFrom[TrafficPolicerHandler.rnd.Next(bikesToSelectFrom.Length)], spawnPoint);
-            car.IsPersistent = true;
-            Vector3 directionFromVehicleToPed = (Game.LocalPlayer.Character.Position - car.Position);
-            directionFromVehicleToPed.Normalize();
+                while (Vector3.Distance(Game.LocalPlayer.Character.Position, spawnPoint) < 80f)
+                {
+                    GameFiber.Yield();
+                    spawnPoint = World.GetNextPositionOnStreet(Game.LocalPlayer.Character.Position.Around2D(120f));
+                }
+                car = new Vehicle(bikesToSelectFrom[TrafficPolicerHandler.rnd.Next(bikesToSelectFrom.Length)], spawnPoint);
+                car.IsPersistent = true;
+                Vector3 directionFromVehicleToPed = (Game.LocalPlayer.Character.Position - car.Position);
+                directionFromVehicleToPed.Normalize();
 
-            float heading = MathHelper.ConvertDirectionToHeading(directionFromVehicleToPed);
-            car.Heading = heading;
-            driver = car.CreateRandomDriver();
-            driver.BlockPermanentEvents = true;
-            driver.IsPersistent = true;
-            if (createBlip)
-            {
-                driverBlip = driver.AttachBlip();
-                driverBlip.Color = System.Drawing.Color.Beige;
-                driverBlip.Scale = 0.7f;
-            }
-            MainLogic();
+                float heading = MathHelper.ConvertDirectionToHeading(directionFromVehicleToPed);
+                car.Heading = heading;
+                driver = car.CreateRandomDriver();
+                driver.BlockPermanentEvents = true;
+                driver.IsPersistent = true;
+                if (createBlip)
+                {
+                    driverBlip = driver.AttachBlip();
+                    driverBlip.Color = System.Drawing.Color.Beige;
+                    driverBlip.Scale = 0.7f;
+                }
+                MainLogic();
+             }
+             
+             catch (Exception e)
+             {
+                  Game.Console.Print(e);
+                  End();
+             }
         }
         
         protected override void MainLogic()
