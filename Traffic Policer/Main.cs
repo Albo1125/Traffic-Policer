@@ -66,7 +66,7 @@ namespace Traffic_Policer
         internal static Version Albo1125CommonVer = new Version("6.6.2.0");
         internal static Version MadeForGTAVersion = new Version("1.0.1493.1");
         internal static float MinimumRPHVersion = 0.51f;
-        internal static string[] AudioFilesToCheckFor = new string[] { "LSPDFR/Police Scanner/Traffic Policer Audio/OTHER_UNIT_TAKING_CALL/OTHER_UNIT_TAKING_CALL_01.wav", "LSPDFR/Police Scanner/Traffic Policer Audio/Crimes/CRIME_DUI_01.wav" };
+        internal static string[] AudioFilesToCheckFor = new string[] { "lspdfr/audio/scanner/Traffic Policer Audio/OTHER_UNIT_TAKING_CALL/OTHER_UNIT_TAKING_CALL_01.wav", "lspdfr/audio/scanners/Traffic Policer Audio/Crimes/CRIME_DUI_01.wav" };
         internal static Version RAGENativeUIVersion = new Version("1.6.3.0");
         internal static Version MadeForLSPDFRVersion = new Version("0.3.38.5436");
 
