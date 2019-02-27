@@ -93,7 +93,7 @@ namespace Traffic_Policer
             Game.DisplayNotification("~b~The offending ~r~" + modelName + " ~b~is parked on ~o~" + World.GetStreetName(car.Position) + ".");
             if (TrafficPolicerHandler.IsLSPDFRPlusRunning)
             {
-                API.LSPDFRPlusFunctions.AddCountToStatistic(TrafficPolicerHandler.LSPDFRPlusSecurityGuid, "Parking tickets issued");
+                API.LSPDFRPlusFunctions.AddCountToStatistic(Main.PluginName, "Parking tickets issued");
             }
 
 
