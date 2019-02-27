@@ -121,6 +121,7 @@ namespace Traffic_Policer.Callouts
         {
             TrafficPolicerHandler.isOwnerWantedCalloutRunning = true;
             car = new Vehicle(carModel, spawnPoint.Position, spawnPoint.Heading);
+            car.RandomiseLicencePlate();
             driver = car.CreateRandomDriver();
             driver.MakeMissionPed();
             while (!driver.Exists())

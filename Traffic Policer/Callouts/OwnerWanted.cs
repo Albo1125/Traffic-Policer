@@ -313,6 +313,7 @@ namespace Traffic_Policer.Callouts
             TrafficPolicerHandler.isOwnerWantedCalloutRunning = true;
 
             car = new Vehicle(carModel, spawnPoint.Position, spawnPoint.Heading);
+            car.RandomiseLicencePlate();
             driver = car.CreateRandomDriver();
             driver.MakeMissionPed();
             while (!driver.Exists())
@@ -1785,6 +1786,7 @@ namespace Traffic_Policer.Callouts
                 spawnPoint = World.GetNextPositionOnStreet(caller.Position.Around2D(50f));
             }
             reinforcementCar = new Vehicle("GRANGER", spawnPoint);
+            reinforcementCar.RandomiseLicencePlate();
             reinforcementCarDriver = reinforcementCar.CreateRandomDriver();
             passenger1 = new Ped(spawnPoint);
             passenger2 = new Ped(spawnPoint);
@@ -2563,6 +2565,7 @@ namespace Traffic_Policer.Callouts
 
 
                         bike1 = new Vehicle(bikesToSelectFrom[TrafficPolicerHandler.rnd.Next(bikesToSelectFrom.Length)], bikeSpawnPoint);
+                        bike1.RandomiseLicencePlate();
                         bike1.IsPersistent = true;
                         bikeRider1 = bike1.CreateRandomDriver();
 
@@ -2587,6 +2590,7 @@ namespace Traffic_Policer.Callouts
                         }
 
                         bike2 = new Vehicle(bikesToSelectFrom[TrafficPolicerHandler.rnd.Next(bikesToSelectFrom.Length)], bikeSpawnPoint);
+                        bike2.RandomiseLicencePlate();
                         bike2.IsPersistent = true;
                         bikeRider2 = bike2.CreateRandomDriver();
                         bikeRider2.MakeMissionPed();
@@ -2605,6 +2609,7 @@ namespace Traffic_Policer.Callouts
                         }
 
                         pursueCar = new Vehicle(sportsCars[TrafficPolicerHandler.rnd.Next(sportsCars.Length)], bikeSpawnPoint);
+                        pursueCar.RandomiseLicencePlate();
                         pursueCar.IsPersistent = true;
                         pursueCarDriver = pursueCar.CreateRandomDriver();
                         pursueCarDriver.MakeMissionPed();
