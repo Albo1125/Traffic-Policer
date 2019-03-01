@@ -60,6 +60,7 @@ namespace Traffic_Policer.Ambientevents
             vehRacer1 = new Vehicle(carModels1[MathHelper.GetRandomInteger(carModels1.Length - 1)], SpawnPoint);
             vehRacer1.Heading = drvPed1.Heading;
             vehRacer1.IsPersistent = true;
+            vehRacer1.RandomiseLicencePlate();
 
             if (vehRacer1.Exists())
             {
@@ -96,7 +97,7 @@ namespace Traffic_Policer.Ambientevents
             vehRacer2 = new Vehicle(carModels2[MathHelper.GetRandomInteger(carModels2.Length - 1)], SpawnPoint1);
             vehRacer2.Heading = drvPed2.Heading;
             vehRacer2.IsPersistent = true;
-
+            vehRacer2.RandomiseLicencePlate();
             if (vehRacer2.Exists())
             {
                 Random rnd = new Random();

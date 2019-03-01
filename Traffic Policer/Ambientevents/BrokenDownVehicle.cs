@@ -47,6 +47,7 @@ namespace Traffic_Policer.Ambientevents
                 car = new Vehicle(vehiclesToSelectFrom[TrafficPolicerHandler.rnd.Next(vehiclesToSelectFrom.Length)], SpawnPoint, SpawnHeading);
                 car.MakePersistent();
                 driver = car.CreateRandomDriver();
+                car.RandomiseLicencePlate();
                 driver.MakeMissionPed();
                 car.EngineHealth = 0;
                 car.IsDriveable = false;

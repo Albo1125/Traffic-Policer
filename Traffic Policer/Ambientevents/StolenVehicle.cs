@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Rage;
 using LSPD_First_Response.Mod.API;
 using Rage.Native;
+using Albo1125.Common.CommonLibrary;
 
 namespace Traffic_Policer.Ambientevents
 {
@@ -31,8 +32,8 @@ namespace Traffic_Policer.Ambientevents
                 spawnPoint = World.GetNextPositionOnStreet(Game.LocalPlayer.Character.Position.Around2D(140f));
             }
             car = new Vehicle(vehiclesToSelectFrom[TrafficPolicerHandler.rnd.Next(vehiclesToSelectFrom.Length)], spawnPoint);
-            
 
+            car.RandomiseLicencePlate();
             Vector3 directionFromVehicleToPed = (Game.LocalPlayer.Character.Position - car.Position);
             directionFromVehicleToPed.Normalize();
 
