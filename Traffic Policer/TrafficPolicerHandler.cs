@@ -323,7 +323,7 @@ namespace Traffic_Policer
                 dispatchCautionMessages = true;
                 ownerWantedCalloutEnabled = true;
                 ownerWantedFrequency = 3;
-                trafficStopMimicKey = Keys.Q;
+                trafficStopMimicKey = Keys.R;
                 trafficStopMimicModifierKey = Keys.LControlKey;
                 Game.LogTrivial(e.ToString());
                 Game.LogTrivial("Loading default Traffic Policer INI file - Error detected in user's INI file.");

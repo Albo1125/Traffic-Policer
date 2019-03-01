@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Albo1125")]
 [assembly: AssemblyProduct("Traffic Policer")]
-[assembly: AssemblyCopyright("Copyright ©  2016-2017 - Albo1125")]
+[assembly: AssemblyCopyright("Copyright ©  2016-2019 - Albo1125")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("6.14.3.0")]
-[assembly: AssemblyFileVersion("6.14.3.0")]
+[assembly: AssemblyVersion("6.15.0.0")]
+[assembly: AssemblyFileVersion("6.15.0.0")]
