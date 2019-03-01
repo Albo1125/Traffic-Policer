@@ -313,6 +313,7 @@ namespace Traffic_Policer.Callouts
             TrafficPolicerHandler.isOwnerWantedCalloutRunning = true;
 
             car = new Vehicle(carModel, spawnPoint.Position, spawnPoint.Heading);
+            car.RandomiseLicencePlate();
             driver = car.CreateRandomDriver();
             driver.MakeMissionPed();
             while (!driver.Exists())
@@ -329,26 +330,9 @@ namespace Traffic_Policer.Callouts
             driverBlip = driver.AttachBlip();
             driverBlip.Scale = 0.7f;
             LSPD_First_Response.Engine.Scripting.Entities.Persona oldpersona = Functions.GetPersonaForPed(driver);
-            LSPD_First_Response.Engine.Scripting.Entities.Persona newpersona = new LSPD_First_Response.Engine.Scripting.Entities.Persona(oldpersona.Forename, oldpersona.Surname, oldpersona.Gender, oldpersona.Birthday);
-
-            newpersona.ELicenseState = oldpersona.ELicenseState;
-            newpersona.TimesStopped = oldpersona.TimesStopped;
-            newpersona.Wanted = true;
-
-            Functions.SetPersonaForPed(driver, newpersona);
-            
-            
-                    
-                    
+            oldpersona.Wanted = true;
+            Functions.SetPersonaForPed(driver, oldpersona);                   
             Game.DisplayNotification("3dtextures", "mpgroundlogo_cops", "~o~ANPR Hit: ~r~Owner Wanted", "Dispatch to ~b~" + TrafficPolicerHandler.DivisionUnitBeat, "The ~o~ANPR Hit ~s~is for ~r~" + descriptionOwnerWanted + ". ~b~Use appropriate caution.");
-                    
-                    
-                    
-                
-            
-
-
-
             return base.OnCalloutAccepted();
         }
 
@@ -1782,6 +1766,7 @@ namespace Traffic_Policer.Callouts
                 spawnPoint = World.GetNextPositionOnStreet(caller.Position.Around2D(50f));
             }
             reinforcementCar = new Vehicle("GRANGER", spawnPoint);
+            reinforcementCar.RandomiseLicencePlate();
             reinforcementCarDriver = reinforcementCar.CreateRandomDriver();
             passenger1 = new Ped(spawnPoint);
             passenger2 = new Ped(spawnPoint);
@@ -2560,6 +2545,7 @@ namespace Traffic_Policer.Callouts
 
 
                         bike1 = new Vehicle(bikesToSelectFrom[TrafficPolicerHandler.rnd.Next(bikesToSelectFrom.Length)], bikeSpawnPoint);
+                        bike1.RandomiseLicencePlate();
                         bike1.IsPersistent = true;
                         bikeRider1 = bike1.CreateRandomDriver();
 
@@ -2584,6 +2570,7 @@ namespace Traffic_Policer.Callouts
                         }
 
                         bike2 = new Vehicle(bikesToSelectFrom[TrafficPolicerHandler.rnd.Next(bikesToSelectFrom.Length)], bikeSpawnPoint);
+                        bike2.RandomiseLicencePlate();
                         bike2.IsPersistent = true;
                         bikeRider2 = bike2.CreateRandomDriver();
                         bikeRider2.MakeMissionPed();
@@ -2602,6 +2589,7 @@ namespace Traffic_Policer.Callouts
                         }
 
                         pursueCar = new Vehicle(sportsCars[TrafficPolicerHandler.rnd.Next(sportsCars.Length)], bikeSpawnPoint);
+                        pursueCar.RandomiseLicencePlate();
                         pursueCar.IsPersistent = true;
                         pursueCarDriver = pursueCar.CreateRandomDriver();
                         pursueCarDriver.MakeMissionPed();

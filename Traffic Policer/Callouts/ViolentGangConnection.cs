@@ -8,6 +8,7 @@ using Rage;
 using LSPD_First_Response.Mod.API;
 using LSPD_First_Response.Mod.Callouts;
 
+using Albo1125.Common.CommonLibrary;
 
 namespace Traffic_Policer.Callouts
 {
@@ -72,6 +73,8 @@ namespace Traffic_Policer.Callouts
             driver.BlockPermanentEvents = true;
 
             car = new Vehicle(vehiclesToSelectFrom[rnd.Next(vehiclesToSelectFrom.Length)], spawnPoint);
+            car.RandomiseLicencePlate();
+            
             car.IsPersistent = true;
             driver.WarpIntoVehicle(car, -1);
             driverBlip = driver.AttachBlip();
