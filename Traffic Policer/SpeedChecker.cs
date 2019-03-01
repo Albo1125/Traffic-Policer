@@ -45,7 +45,7 @@ namespace Traffic_Policer
         private static int xOffset = 0;
         private static int yOffset = 0;
         private static int zOffset = 0;
-        private static System.Media.SoundPlayer FlagBlipPlayer = new System.Media.SoundPlayer("LSPDFR/Police Scanner/Traffic Policer Audio/FLAG_BLIP.wav");
+        private static System.Media.SoundPlayer FlagBlipPlayer = new System.Media.SoundPlayer("lspdfr/audio/scanner/Traffic Policer Audio/FLAG_BLIP.wav");
         public static bool PlayFlagBlip = true;
         private static List<Vehicle> VehiclesNotFlagged = new List<Vehicle>();
 
@@ -447,17 +447,17 @@ namespace Traffic_Policer
                                                 TargetFlag = "Owner Wanted";
                                                 FlagsTextColour = Color.Red;
                                             }
-                                            else if (Functions.GetPersonaForPed(veh.Driver).LicenseState == LSPD_First_Response.Engine.Scripting.Entities.ELicenseState.Suspended)
+                                            else if (Functions.GetPersonaForPed(veh.Driver).ELicenseState == LSPD_First_Response.Engine.Scripting.Entities.ELicenseState.Suspended)
                                             {
                                                 TargetFlag = "Licence Suspended";
                                                 FlagsTextColour = Color.Red;
                                             }
-                                            else if (Functions.GetPersonaForPed(veh.Driver).LicenseState == LSPD_First_Response.Engine.Scripting.Entities.ELicenseState.Expired)
+                                            else if (Functions.GetPersonaForPed(veh.Driver).ELicenseState == LSPD_First_Response.Engine.Scripting.Entities.ELicenseState.Expired)
                                             {
                                                 TargetFlag = "Licence Expired";
                                                 FlagsTextColour = Color.Orange;
                                             }
-                                            else if (Functions.GetPersonaForPed(veh.Driver).BirthDay.Month == DateTime.Now.Month && Functions.GetPersonaForPed(veh.Driver).BirthDay.Day == DateTime.Now.Day)
+                                            else if (Functions.GetPersonaForPed(veh.Driver).Birthday.Month == DateTime.Now.Month && Functions.GetPersonaForPed(veh.Driver).Birthday.Day == DateTime.Now.Day)
                                             {
                                                 TargetFlag = "Owner's Birthday";
                                                 FlagsTextColour = Color.Green;

@@ -329,7 +329,12 @@ namespace Traffic_Policer.Callouts
             driverBlip = driver.AttachBlip();
             driverBlip.Scale = 0.7f;
             LSPD_First_Response.Engine.Scripting.Entities.Persona oldpersona = Functions.GetPersonaForPed(driver);
-            LSPD_First_Response.Engine.Scripting.Entities.Persona newpersona = new LSPD_First_Response.Engine.Scripting.Entities.Persona(driver, oldpersona.Gender, oldpersona.BirthDay, oldpersona.Citations, oldpersona.Forename, oldpersona.Surname, oldpersona.LicenseState, oldpersona.TimesStopped, true, false, false);
+            LSPD_First_Response.Engine.Scripting.Entities.Persona newpersona = new LSPD_First_Response.Engine.Scripting.Entities.Persona(oldpersona.Forename, oldpersona.Surname, oldpersona.Gender, oldpersona.Birthday);
+
+            newpersona.ELicenseState = oldpersona.ELicenseState;
+            newpersona.TimesStopped = oldpersona.TimesStopped;
+            newpersona.Wanted = true;
+
             Functions.SetPersonaForPed(driver, newpersona);
             
             

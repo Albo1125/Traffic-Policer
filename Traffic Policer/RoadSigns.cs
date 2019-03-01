@@ -35,7 +35,7 @@ namespace Traffic_Policer
                     //string selectedCone = "PROP_MP_ARROW_BARRIER_01";
                     if (TrafficPolicerHandler.IsLSPDFRPlusRunning)
                     {
-                        API.LSPDFRPlusFunctions.AddCountToStatistic(TrafficPolicerHandler.LSPDFRPlusSecurityGuid, "Road signs placed");
+                        API.LSPDFRPlusFunctions.AddCountToStatistic(Main.PluginName, "Road signs placed");
                     }
                     Rage.Object trafficCone = new Rage.Object(selectedSign, Location);
                     trafficCone.IsPersistent = true;

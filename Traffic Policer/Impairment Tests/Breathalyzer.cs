@@ -90,7 +90,7 @@ namespace Traffic_Policer.Impairment_Tests
                                     uint noti = Game.DisplayNotification("Waiting for ~b~breathalyzer~s~ result...");
                                     if (TrafficPolicerHandler.IsLSPDFRPlusRunning)
                                     {
-                                        API.LSPDFRPlusFunctions.AddCountToStatistic(TrafficPolicerHandler.LSPDFRPlusSecurityGuid, "Breathalyzer tests conducted");
+                                        API.LSPDFRPlusFunctions.AddCountToStatistic(Main.PluginName, "Breathalyzer tests conducted");
                                     }
 
                                     GameFiber.Sleep(3000);
@@ -118,7 +118,7 @@ namespace Traffic_Policer.Impairment_Tests
                                                         TrafficPolicerHandler.PedsToChargeWithDrinkDriving.Add(nearestPed);
                                                         if (TrafficPolicerHandler.IsLSPDFRPlusRunning)
                                                         {
-                                                            API.LSPDFRPlusFunctions.AddCountToStatistic(TrafficPolicerHandler.LSPDFRPlusSecurityGuid, "People caught driving over alcohol limit");
+                                                            API.LSPDFRPlusFunctions.AddCountToStatistic(Main.PluginName, "People caught driving over alcohol limit");
                                                         }
                                                     }
                                                 }
@@ -140,7 +140,7 @@ namespace Traffic_Policer.Impairment_Tests
                                                 TrafficPolicerHandler.PedsToChargeWithDrinkDriving.Add(nearestPed);
                                                 if (TrafficPolicerHandler.IsLSPDFRPlusRunning)
                                                 {
-                                                    API.LSPDFRPlusFunctions.AddCountToStatistic(TrafficPolicerHandler.LSPDFRPlusSecurityGuid, "People caught driving over alcohol limit");
+                                                    API.LSPDFRPlusFunctions.AddCountToStatistic(Main.PluginName, "People caught driving over alcohol limit");
                                                 }
                                             }
                                         }
