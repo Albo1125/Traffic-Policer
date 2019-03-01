@@ -435,10 +435,6 @@ namespace Traffic_Policer
                 Game.RemoveNotification(startnot);
                 IsBritishPolicingScriptRunning = IsLSPDFRPluginRunning("British Policing Script", new Version("0.8.0.0"));
                 IsLSPDFRPlusRunning = IsLSPDFRPluginRunning("LSPDFR+", new Version("1.4.0.0"));
-                if (IsLSPDFRPlusRunning)
-                {
-                    LSPDFRPlusSecurityGuid = API.LSPDFRPlusFunctions.GenerateSecurityGuid("Traffic Policer", "Albo1125", "EnddxsXdvFd9/doB9rfiEt3V4fXTXOBYrgHjnMVMskM7yE5YEQE+RMBWqDCE7AjX2OYhWznGo6t/pDLfXCWhjUbDqzpCWm0kDxtdhQpp8QPATz42+AEKWTI5f0bq3JQ+hQMtajWaOsq9YZV8udEBfqJT0X/fzjOxG+dMWe9fc/E=");
-                }
 
                 //Low priority loop
                 while (true)

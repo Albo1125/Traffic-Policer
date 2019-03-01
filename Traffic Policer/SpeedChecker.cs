@@ -45,7 +45,7 @@ namespace Traffic_Policer
         private static int xOffset = 0;
         private static int yOffset = 0;
         private static int zOffset = 0;
-        private static System.Media.SoundPlayer FlagBlipPlayer = new System.Media.SoundPlayer("LSPDFR/Police Scanner/Traffic Policer Audio/FLAG_BLIP.wav");
+        private static System.Media.SoundPlayer FlagBlipPlayer = new System.Media.SoundPlayer("lspdfr/audio/scanner/Traffic Policer Audio/FLAG_BLIP.wav");
         public static bool PlayFlagBlip = true;
         private static List<Vehicle> VehiclesNotFlagged = new List<Vehicle>();
 

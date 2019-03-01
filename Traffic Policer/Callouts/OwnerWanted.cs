@@ -330,29 +330,9 @@ namespace Traffic_Policer.Callouts
             driverBlip = driver.AttachBlip();
             driverBlip.Scale = 0.7f;
             LSPD_First_Response.Engine.Scripting.Entities.Persona oldpersona = Functions.GetPersonaForPed(driver);
-            LSPD_First_Response.Engine.Scripting.Entities.Persona newpersona = new LSPD_First_Response.Engine.Scripting.Entities.Persona(oldpersona.Forename, oldpersona.Surname, oldpersona.Gender)
-            {
-                Birthday = oldpersona.Birthday,
-                Citations = oldpersona.Citations,
-                ELicenseState = oldpersona.ELicenseState,
-                TimesStopped = oldpersona.TimesStopped,
-                Wanted = true
-            };
-                
-            Functions.SetPersonaForPed(driver, newpersona);
-            
-            
-                    
-                    
+            oldpersona.Wanted = true;
+            Functions.SetPersonaForPed(driver, oldpersona);                   
             Game.DisplayNotification("3dtextures", "mpgroundlogo_cops", "~o~ANPR Hit: ~r~Owner Wanted", "Dispatch to ~b~" + TrafficPolicerHandler.DivisionUnitBeat, "The ~o~ANPR Hit ~s~is for ~r~" + descriptionOwnerWanted + ". ~b~Use appropriate caution.");
-                    
-                    
-                    
-                
-            
-
-
-
             return base.OnCalloutAccepted();
         }
 
