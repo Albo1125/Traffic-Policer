@@ -70,7 +70,10 @@ namespace Traffic_Policer.Impairment_Tests
                                     {
                                         //Game.LocalPlayer.Character.Tasks.PlayAnimation("missfbi3_party_b", "walk_to_balcony_male2", 0.5f, AnimationFlags.None).WaitForCompletion(500);
                                         Game.LocalPlayer.Character.Tasks.PlayAnimation("amb@code_human_police_investigate@idle_b", "idle_e", 2f, 0);
-                                        nearestPed.Tasks.PlayAnimation("amb@incar@male@smoking_low@idle_a", "idle_a", 2f, 0);
+                                        if(!nearestPed.CurrentVehicle.IsBike)
+                                        {
+                                            nearestPed.Tasks.PlayAnimation("amb@incar@male@smoking_low@idle_a", "idle_a", 2f, 0);
+                                        }
                                         GameFiber.Sleep(2000);
                                     }
                                     else
