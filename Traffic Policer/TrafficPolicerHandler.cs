@@ -399,8 +399,7 @@ namespace Traffic_Policer
 
         public static bool IsBritishPolicingScriptRunning = false;
         public static bool IsLSPDFRPlusRunning = false;
-
-        public static Guid LSPDFRPlusSecurityGuid;
+        
         /// <summary>
         /// The main loop of the plugin
         /// </summary>

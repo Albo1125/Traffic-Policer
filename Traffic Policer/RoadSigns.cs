@@ -215,27 +215,22 @@ namespace Traffic_Policer
             if (Direction == "1")
             {
                 return PositionToPlaceAt + (Vector3.RelativeFront * Distance);
-                return Game.LocalPlayer.Character.GetOffsetPosition(Vector3.RelativeFront * Distance);
             }
             else if (Direction == "2")
             {
                 return PositionToPlaceAt + (Vector3.RelativeBack * Distance);
-                return Game.LocalPlayer.Character.GetOffsetPosition(Vector3.RelativeBack * Distance);
             }
             else if (Direction == "3")
             {
                 return PositionToPlaceAt + (Vector3.RelativeLeft * Distance);
-                return Game.LocalPlayer.Character.GetOffsetPosition(Vector3.RelativeLeft * Distance);
             }
             else if (Direction == "4")
             {
                 return PositionToPlaceAt + (Vector3.RelativeRight * Distance);
-                return Game.LocalPlayer.Character.GetOffsetPosition(Vector3.RelativeRight * Distance);
             }
             else
             {
                 return Game.LocalPlayer.Character.GetOffsetPosition(Vector3.RelativeFront * Distance);
-
             }
         }
 

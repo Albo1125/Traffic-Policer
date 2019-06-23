@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Traffic_Policer</RootNamespace>
     <AssemblyName>Traffic Policer</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>
     </SccProjectName>
@@ -71,7 +71,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>dependencies\British Policing Script.dll</HintPath>
     </Reference>
-    <Reference Include="LSPD First Response, Version=0.3.38.5436, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="LSPD First Response, Version=0.4.39.22580, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>dependencies\LSPD First Response.dll</HintPath>
     </Reference>
